@@ -1,0 +1,17 @@
+/* Дополнительные стили, если нужно */
+body {
+    padding-top: 56px; /* Для фиксированной навигации */
+}
+
+.hero {
+    background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('.');
+    background-size: cover;
+    color: white;
+}
+
+.card {
+    transition: transform 0.3s;
+}
+.card:hover {
+    transform: translateY(-5px);
+}

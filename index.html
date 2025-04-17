@@ -1,0 +1,426 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Цифровые карты и навигационные сервисы в туризме</title>
+    <!-- Bootstrap 5 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.0/font/bootstrap-icons.css">
+    <style>
+        body {
+            padding-top: 56px;
+            scroll-behavior: smooth;
+        }
+        .hero {
+            background: linear-gradient(rgba(0, 100, 0, 0.7), rgba(0, 100, 0, 0.7)), url('https://images.unsplash.com/photo-1464037866556-6812c9d1c72e?ixlib=rb-1.2.1&auto=format&fit=crop&w=1920&q=80');
+            background-size: cover;
+            color: white;
+            padding: 100px 0;
+        }
+        .section {
+            padding: 80px 0;
+        }
+        .section-title {
+            position: relative;
+            margin-bottom: 40px;
+            padding-bottom: 15px;
+        }
+        .section-title:after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 3px;
+            background: #198754;
+        }
+        .card {
+            transition: all 0.3s;
+            border: 1px solid #198754;
+        }
+        .card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+        }
+        .nav-pills .nav-link.active {
+            background-color: #198754;
+        }
+        .tab-content {
+            padding: 20px;
+            border: 1px solid #dee2e6;
+            border-top: none;
+            border-radius: 0 0 5px 5px;
+        }
+        .app-card img {
+            height: 200px;
+            object-fit: cover;
+        }
+        .comparison-table th {
+            background-color: #198754;
+            color: white;
+        }
+    </style>
+</head>
+<body data-bs-spy="scroll" data-bs-target="#navbar-example">
+    <!-- Навигационная панель -->
+    <nav id="navbar-example" class="navbar navbar-expand-lg navbar-dark bg-success fixed-top">
+        <div class="container">
+            <a class="navbar-brand" href="#">
+                <i class="bi bi-compass"></i> ТуризмНавигатор
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link active" href="#home">Главная</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#services">Сервисы</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#apps">Приложения</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#tips">Советы</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Главная секция -->
+    <section id="home" class="hero text-center">
+        <div class="container">
+            <h1 class="display-4 fw-bold">Цифровые карты и навигация в туризме</h1>
+            <p class="lead">Использование онлайн-карт и мобильных приложений для планирования маршрутов</p>
+            <a href="#services" class="btn btn-success btn-lg mt-3">Узнать больше</a>
+        </div>
+    </section>
+
+    <!-- Основной контент -->
+    <main class="container">
+        <!-- О сервисе -->
+        <section id="about" class="section">
+            <div class="row align-items-center">
+                <div class="col-lg-6">
+                    <h2 class="fw-bold mb-4">Современные технологии для путешественников</h2>
+                    <p class="lead">Сегодня цифровые карты и навигационные сервисы стали незаменимыми помощниками для туристов. Они позволяют не только проложить оптимальный маршрут, но и найти интересные места, узнать о достопримечательностях и даже получить информацию о погоде и местных услугах.</p>
+                    <p>Благодаря развитию мобильных технологий, все эти возможности всегда под рукой - в вашем смартфоне или планшете.</p>
+                </div>
+                <div class="col-lg-6">
+                    <img src="https://images.unsplash.com/photo-1526778548025-fa2f459cd5c1?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" alt="Турист с телефоном и картой" class="img-fluid rounded shadow">
+                </div>
+            </div>
+        </section>
+
+        <!-- Сервисы -->
+        <section id="services" class="section bg-light">
+            <h2 class="text-center section-title">Навигационные сервисы</h2>
+
+            <div class="row">
+                <div class="col-lg-4 mb-4">
+                    <div class="card h-100">
+                        <div class="card-body text-center">
+                            <img src="https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?ixlib=rb-1.2.1&auto=format&fit=crop&w=300&q=80" alt="Маршрут на карте" class="img-fluid rounded mb-3">
+                            <h3 class="card-title mt-3">Прокладка маршрутов</h3>
+                            <p class="card-text">Оптимальные маршруты с учетом транспорта, пеших троп и достопримечательностей.</p>
+                            <ul class="list-group list-group-flush mb-3">
+                                <li class="list-group-item"><i class="bi bi-check-circle-fill text-success me-2"></i>Многомодовые маршруты</li>
+                                <li class="list-group-item"><i class="bi bi-check-circle-fill text-success me-2"></i>Учет пробок</li>
+                                <li class="list-group-item"><i class="bi bi-check-circle-fill text-success me-2"></i>Расчет времени</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-4 mb-4">
+                    <div class="card h-100">
+                        <div class="card-body text-center">
+                            <img src="https://images.unsplash.com/photo-1506197603052-3cc9c3a201bd?ixlib=rb-1.2.1&auto=format&fit=crop&w=300&q=80" alt="Оффлайн карты" class="img-fluid rounded mb-3">
+                            <h3 class="card-title mt-3">Оффлайн карты</h3>
+                            <p class="card-text">Использование карт без интернета в удаленных местах и за границей.</p>
+                            <div class="table-responsive mt-3">
+                                <table class="table table-striped">
+                                    <tr>
+                                        <td>Maps.me</td>
+                                        <td>Полностью оффлайн</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Google Maps</td>
+                                        <td>Загрузка областей</td>
+                                    </tr>
+                                    <tr>
+                                        <td>OsmAnd</td>
+                                        <td>Для туристов</td>
+                                    </tr>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-4 mb-4">
+                    <div class="card h-100">
+                        <div class="card-body text-center">
+                            <img src="https://images.unsplash.com/photo-1552664730-d307ca884978?ixlib=rb-1.2.1&auto=format&fit=crop&w=300&q=80" alt="Достопримечательности" class="img-fluid rounded mb-3">
+                            <h3 class="card-title mt-3">Дополнительная информация</h3>
+                            <p class="card-text">Отзывы, фото, описания мест, часы работы и другая полезная информация.</p>
+                            <ul class="list-group list-group-flush mt-3">
+                                <li class="list-group-item"><i class="bi bi-cup-hot text-success me-2"></i>Места питания</li>
+                                <li class="list-group-item"><i class="bi bi-building text-success me-2"></i>Достопримечательности</li>
+                                <li class="list-group-item"><i class="bi bi-umbrella text-success me-2"></i>Услуги для туристов</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Приложения -->
+        <section id="apps" class="section">
+            <h2 class="text-center section-title">Мобильные приложения</h2>
+
+            <div class="row">
+                <div class="col-md-6 col-lg-4 mb-4">
+                    <div class="card h-100 app-card">
+                        <img src="https://lh3.googleusercontent.com/KwUBNPbMTk9jDXYS2AeX3illtVRTkrKVh5xR1Mg4WHd0CG2tV4mrh1z3kXi5z_warlk=s180-rw" class="card-img-top" alt="Google Maps">
+                        <div class="card-body">
+                            <h3 class="card-title">Google Maps</h3>
+                            <div class="d-flex justify-content-between mb-2">
+                                <span class="badge bg-success">Android/iOS</span>
+                                <span class="text-warning">
+                                    <i class="bi bi-star-fill"></i>
+                                    <i class="bi bi-star-fill"></i>
+                                    <i class="bi bi-star-fill"></i>
+                                    <i class="bi bi-star-fill"></i>
+                                    <i class="bi bi-star-half"></i>
+                                </span>
+                            </div>
+                            <p class="card-text">Самое популярное приложение с детальными картами, навигацией, информацией о транспорте и достопримечательностях.</p>
+                        </div>
+                        <div class="card-footer bg-transparent">
+                            <a href="https://www.google.com/maps" class="btn btn-success w-100" target="_blank">Скачать</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-6 col-lg-4 mb-4">
+                    <div class="card h-100 app-card">
+                        <img src="https://lh3.googleusercontent.com/3zkP2SYe7yYoKKe47bsNe44yTgb4Ukh__rBbwXwgkjNRe4PykGG409ozBxzxkrubV7z=s180-rw" class="card-img-top" alt="Maps.me">
+                        <div class="card-body">
+                            <h3 class="card-title">Maps.me</h3>
+                            <div class="d-flex justify-content-between mb-2">
+                                <span class="badge bg-success">Android/iOS</span>
+                                <span class="text-warning">
+                                    <i class="bi bi-star-fill"></i>
+                                    <i class="bi bi-star-fill"></i>
+                                    <i class="bi bi-star-fill"></i>
+                                    <i class="bi bi-star-fill"></i>
+                                    <i class="bi bi-star"></i>
+                                </span>
+                            </div>
+                            <p class="card-text">Полностью оффлайн карты с маршрутизацией для пешеходов, автомобилистов и велосипедистов.</p>
+                        </div>
+                        <div class="card-footer bg-transparent">
+                            <a href="https://maps.me" class="btn btn-success w-100" target="_blank">Скачать</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-6 col-lg-4 mb-4">
+                    <div class="card h-100 app-card">
+                        <img src="https://lh3.googleusercontent.com/0j8lV5VYH3sYx5f8JxJ9Zf9JQ9Z5X9Q6X9Q6X9Q6X9Q6X9Q6X9Q6X9Q6X9Q6X9Q6X9Q6X9Q6X9Q6X9Q6X9Q6X9Q=s180-rw" class="card-img-top" alt="AllTrails">
+                        <div class="card-body">
+                            <h3 class="card-title">AllTrails</h3>
+                            <div class="d-flex justify-content-between mb-2">
+                                <span class="badge bg-success">Android/iOS</span>
+                                <span class="text-warning">
+                                    <i class="bi bi-star-fill"></i>
+                                    <i class="bi bi-star-fill"></i>
+                                    <i class="bi bi-star-fill"></i>
+                                    <i class="bi bi-star-fill"></i>
+                                    <i class="bi bi-star-fill"></i>
+                                </span>
+                            </div>
+                            <p class="card-text">Лучшее приложение для пеших походов и треккинга с подробными маршрутами и отзывами.</p>
+                        </div>
+                        <div class="card-footer bg-transparent">
+                            <a href="https://www.alltrails.com" class="btn btn-success w-100" target="_blank">Скачать</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="mt-5">
+                <h3 class="text-center mb-4">Сравнение функций приложений</h3>
+                <div class="table-responsive">
+                    <table class="table table-bordered comparison-table">
+                        <thead>
+                            <tr>
+                                <th>Функция</th>
+                                <th>Google Maps</th>
+                                <th>Maps.me</th>
+                                <th>AllTrails</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Оффлайн карты</td>
+                                <td><i class="bi bi-check-lg text-success"></i></td>
+                                <td><i class="bi bi-check-lg text-success"></i></td>
+                                <td><i class="bi bi-check-lg text-success"></i></td>
+                            </tr>
+                            <tr>
+                                <td>Пешая навигация</td>
+                                <td><i class="bi bi-check-lg text-success"></i></td>
+                                <td><i class="bi bi-check-lg text-success"></i></td>
+                                <td><i class="bi bi-check-lg text-success"></i></td>
+                            </tr>
+                            <tr>
+                                <td>Автомобильная навигация</td>
+                                <td><i class="bi bi-check-lg text-success"></i></td>
+                                <td><i class="bi bi-check-lg text-success"></i></td>
+                                <td><i class="bi bi-x-lg text-danger"></i></td>
+                            </tr>
+                            <tr>
+                                <td>Туристические тропы</td>
+                                <td><i class="bi bi-x-lg text-danger"></i></td>
+                                <td><i class="bi bi-check-lg text-success"></i></td>
+                                <td><i class="bi bi-check-lg text-success"></i></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </section>
+
+        <!-- Советы -->
+        <section id="tips" class="section bg-light">
+            <h2 class="text-center section-title">Советы по навигации</h2>
+
+            <div class="row">
+                <div class="col-lg-6 mb-4">
+                    <div class="card h-100">
+                        <div class="card-body">
+                            <img src="https://images.unsplash.com/photo-1501555088652-021faa106b9b?ixlib=rb-1.2.1&auto=format&fit=crop&w=600&q=80" alt="Планирование маршрута" class="img-fluid rounded mb-3">
+                            <h3><i class="bi bi-lightbulb text-success"></i> Планирование маршрутов</h3>
+                            <ul class="list-group list-group-flush">
+                                <li class="list-group-item"><i class="bi bi-check-circle text-success me-2"></i> Заранее загружайте карты нужных регионов</li>
+                                <li class="list-group-item"><i class="bi bi-check-circle text-success me-2"></i> Сохраняйте важные точки (отели, вокзалы)</li>
+                                <li class="list-group-item"><i class="bi bi-check-circle text-success me-2"></i> Прокладывайте маршруты до поездки</li>
+                                <li class="list-group-item"><i class="bi bi-check-circle text-success me-2"></i> Используйте слои карт (транспорт, рельеф)</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-6 mb-4">
+                    <div class="card h-100">
+                        <div class="card-body">
+                            <img src="https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?ixlib=rb-1.2.1&auto=format&fit=crop&w=600&q=80" alt="Использование телефона в походе" class="img-fluid rounded mb-3">
+                            <h3><i class="bi bi-phone text-success"></i> В поездке</h3>
+                            <div class="accordion" id="tipsAccordion">
+                                <div class="accordion-item">
+                                    <h4 class="accordion-header">
+                                        <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne">
+                                            Экономия батареи
+                                        </button>
+                                    </h4>
+                                    <div id="collapseOne" class="accordion-collapse collapse show" data-bs-parent="#tipsAccordion">
+                                        <div class="accordion-body">
+                                            <ul>
+                                                <li>Используйте режим энергосбережения</li>
+                                                <li>Закрывайте фоновые приложения</li>
+                                                <li>Уменьшайте яркость экрана</li>
+                                                <li>Носите power bank</li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="accordion-item">
+                                    <h4 class="accordion-header">
+                                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo">
+                                            Безопасность
+                                        </button>
+                                    </h4>
+                                    <div id="collapseTwo" class="accordion-collapse collapse" data-bs-parent="#tipsAccordion">
+                                        <div class="accordion-body">
+                                            <p>Делитесь своим местоположением с близкими через:</p>
+                                            <ul>
+                                                <li>Google Maps ("Поделиться геопозицией")</li>
+                                                <li>Мессенджеры (WhatsApp, Telegram)</li>
+                                                <li>Специальные приложения (Glympse)</li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Подвал -->
+    <footer class="bg-dark text-white py-4">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4 mb-3">
+                    <h5>ТуризмНавигатор</h5>
+                    <p>Использование цифровых технологий для комфортного и безопасного туризма.</p>
+                </div>
+                <div class="col-md-4 mb-3">
+                    <h5>Быстрые ссылки</h5>
+                    <ul class="list-unstyled">
+                        <li><a href="#home" class="text-white">Главная</a></li>
+                        <li><a href="#services" class="text-white">Сервисы</a></li>
+                        <li><a href="#apps" class="text-white">Приложения</a></li>
+                        <li><a href="#tips" class="text-white">Советы</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-4 mb-3">
+                    <h5>Контакты</h5>
+                    <ul class="list-unstyled">
+                        <li><i class="bi bi-envelope me-2"></i> info@tourismnav.com</li>
+                        <li><i class="bi bi-telephone me-2"></i> +7 (123) 456-78-90</li>
+                    </ul>
+                    <div class="mt-3">
+                        <a href="#" class="text-white me-2"><i class="bi bi-facebook fs-4"></i></a>
+                        <a href="#" class="text-white me-2"><i class="bi bi-twitter fs-4"></i></a>
+                        <a href="#" class="text-white me-2"><i class="bi bi-instagram fs-4"></i></a>
+                    </div>
+                </div>
+            </div>
+            <hr>
+            <div class="text-center">
+                <p class="mb-0">&copy; 2023 ТуризмНавигатор. Все права защищены.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        // Активация подсказок Bootstrap
+        var tooltipTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="tooltip"]'))
+        var tooltipList = tooltipTriggerList.map(function (tooltipTriggerEl) {
+            return new bootstrap.Tooltip(tooltipTriggerEl)
+        });
+
+        // Плавная прокрутка для якорных ссылок
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+    </script>
+</body>
+</html>
